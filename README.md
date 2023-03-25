@@ -19,3 +19,11 @@ da unidade e também mostra o valor total ele tiver mais itens do mesmo.
 
 
 Nessa parte no botao lapis edita e o conteudos e salva e no balde apaga o coteudo.
+
+
+#tela para o usuario.
+
+
+![tela-login-usuario](https://user-images.githubusercontent.com/101062401/227738442-81d74775-b72a-46cb-8007-50b3a4bd4f23.jpg)
+![tela-do-sistema-de-busca](https://user-images.githubusercontent.com/101062401/227738446-04906809-5aeb-4f51-992b-cdc771ab118c.jpg)
+![tela-resultado-busca-no-banco](https://user-images.githubusercontent.com/101062401/227738450-819c60e1-c678-43c6-bcd8-9eca51eafc4b.jpg)
