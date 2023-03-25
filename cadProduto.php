@@ -91,21 +91,21 @@ if(isset($_POST['submit']))
             <label for="cod">Código</label>
             <br>
             <br>
-            <input type="text" name="cod" id ="cod" class="inputUser" required>
+            <input type="text" name="cod" id ="cod" class="inputUser" autocomplete="off"required>
           </div>
           <br>
           <div class="box-input">
             <label for="desc">Descrição</label>
             <br>
             <br>
-            <input type="text" name="desc" id="desc" class="inputUser" required>
+            <input type="text" name="desc" id="desc" class="inputUser" autocomplete="off" required>
           </div>
           <br>
           <div class="box-input">
             <label for="valor">Preço</label>
             <br>
             <br>
-            <input type="text" name="valor" id="valor" class="inputUser" required>
+            <input type="text" name="valor" id="valor" class="inputUser" autocomplete="off" required>
           </div>
           <br>
           <input type="submit" name="submit" id="submit" class="btn">

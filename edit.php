@@ -115,21 +115,21 @@ if(!empty($_GET['id']))
             <label for="cod">Código</label>
             <br>
             <br>
-            <input type="text" name="cod" id ="cod" class="inputUser" value="<?php echo $cod ?>"required>
+            <input type="text" name="cod" id ="cod" class="inputUser" autocomplete="off" value="<?php echo $cod ?>"required>
           </div>
           <br>
           <div class="box-input">
             <label for="desc">Descrição</label>
             <br>
             <br>
-            <input type="text" name="desc" id="desc" class="inputUser" value="<?php echo $desc ?>"required>
+            <input type="text" name="desc" id="desc" class="inputUser" autocomplete="off" value="<?php echo $desc ?>"required>
           </div>
           <br>
           <div class="box-input">
             <label for="valor">Preço</label>
             <br>
             <br>
-            <input type="text" name="valor" id="valor" class="inputUser"value="<?php echo $valor ?>" required>
+            <input type="text" name="valor" id="valor" class="inputUser" autocomplete="off" value="<?php echo $valor ?>" required>
           </div>
           <br>
           <input type="submit" name="update" id="update" class="btn">

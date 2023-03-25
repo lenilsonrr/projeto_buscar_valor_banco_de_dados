@@ -6,6 +6,7 @@ if ((!isset($_SESSION['login']) == true) and (!isset($_SESSION['senha']) == true
 }
 
 $log = $_SESSION['login'];
+$somaTotal = 0;
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +35,7 @@ $log = $_SESSION['login'];
   }
 
   .inputUser {
-    height: 100px;
+    height: 80px;
     max-width: 200px;
     font-size: 60px;
   }
@@ -60,9 +61,10 @@ $log = $_SESSION['login'];
   .desc{
     display: block;
     text-align: center;
-    color: black;
+    color: yellow;
     font-weight: bold;
     font-size: 18px;
+    text-shadow: 1px 2px black;
   }
 
   .cod{
@@ -70,75 +72,75 @@ $log = $_SESSION['login'];
     text-align: center;
     color: black;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .valor {
     display: block;
     text-align: center;
+    color: yellow;
+    text-shadow: 1px 2px black;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: -10px;
+  }
+  .valorT{
     color: black;
     text-shadow: 1px 2px white;
-    font-weight: bold;
-    font-size: 150px;
-    margin-top: -20px;
+    margin-top: -10px;
+    font-size:60px ;
   }
+ 
 </style>
 
 <body>
   <a href="sair.php" class="btn-sair">Sair</a>
   <?php
   echo "<h1>Bem vindo <u>$log</u></h1>";
+  
   ?>
 
   <div class="box">
     <form action="sistema.php" method="post">
       <label for="cod">Digite o código</label>
       <br>
+      <input type="number" name="cod" id="cod" class="inputUser" autocomplete="off" required>
       <br>
-      <input type="text" name="cod" id="cod" class="inputUser" required>
+       <label for="qtd">Digite a quantidade</label>
+      <br>
+      <input type="number" name="qtd" id="qtd" class="inputUser" autocomplete="off" required>
       <br>
       <br>
       <input type="submit" name="submit" id="submit" class="btn">
     </form>
-
   </div>
-
-  <div class="resultado">
-
-    <div class="resultado">
       <?php
       if (isset($_POST['submit'])) {
         $cod = $_POST['cod'];
+        $qtd = $_POST['qtd'];
         include_once('conexao.php');
-
         $sqlFind = "SELECT * FROM produtos WHERE cod='$cod'";
-
         $result = $conexao->query($sqlFind);
         if ($result->num_rows > 0) {
           while ($user_data = mysqli_fetch_assoc($result)) {
-
             $cod = $user_data['cod'];
             $desc = $user_data['descri'];
             $valor = $user_data['valor'];
-
           }
-       
           echo "<h1 class='desc'>$desc</h1>";
-
-          echo "<h1 class='cod'>cod: $cod</h1>";
-
-          echo "<h1 class='valor'>R$: $valor</h1>";
-
+          echo "<h1 class='cod'>Cod: $cod</h1>";
+          echo "<h1 class='valor'>R$ und: $valor</h1>";
+          $num = floatval($valor)*$qtd;
+          $formatted_num = number_format($num, 2, ',', '.');
+  
+          echo "<p class='valorT'>Soma: $formatted_num<p>"; 
+          
         }else{
-          echo "<h1 class='cod'>Não Existe</h1>";
+          echo "<h1 class='cod'>Não existe</h1>";
         }
-
+       
       }
-
-
-
       ?>
     </div>
-</body>
-
+    </body>
 </html>
